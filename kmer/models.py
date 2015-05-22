@@ -1,5 +1,4 @@
-""" Table models for analysis results. """
-from bitarray import bitarray
+""" Table models for kmers. """
 from django.db import models
 
 
@@ -21,27 +20,7 @@ class KmerBinary(models.Model):
 
     """ Unique 31-mer strings stored as binary. """
 
-    _string = models.BinaryField(max_length=8, unique=True,
-                                 db_index=True, db_column='string')
-
-    _code = {
-        'A': bitarray('01'),
-        'C': bitarray('11'),
-        'G': bitarray('00'),
-        'T': bitarray('10')
-    }
-
-    def set_string(self, string):
-        a = bitarray()
-        a.encode(self._code, string)
-        self._string = a.tobytes()
-
-    def get_string(self):
-        a = bitarray()
-        a.frombytes(self._string)
-        return a.decode(self._code)[0:31]
-
-    string = property(get_string, set_string)
+    string = models.BinaryField(max_length=8, unique=True, db_index=True)
 
 '''
 Ignore for now

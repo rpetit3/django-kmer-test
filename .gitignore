@@ -1,3 +1,4 @@
 nohup.out
 *.*~
 *.pyc
+run_tests.*
