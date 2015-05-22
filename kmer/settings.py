@@ -78,7 +78,6 @@ WSGI_APPLICATION = 'kmer.wsgi.application'
 # sudo -u postgres bash -c "psql -c \"CREATE USER kmer WITH PASSWORD 'kmer';\""
 # sudo -u postgres bash -c "psql -c \"CREATE DATABASE kmer;\""
 # sudo -u postgres bash -c "psql -c \"GRANT ALL PRIVILEGES ON DATABASE kmer to kmer;\""
-# CREATE DATABASE kmer ENCODING 'UTF8' OWNER kmer TEMPLATE template0;
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
