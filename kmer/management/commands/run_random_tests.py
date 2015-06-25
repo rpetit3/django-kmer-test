@@ -12,7 +12,7 @@ from kmer.models import KmerString, KmerBinary
 
 
 class Command(BaseCommand):
-    help = 'Insert Kmer data into the database.'
+    help = 'Insert random Kmer data into the database.'
 
     _code = {
         'A': bitarray('01'),
